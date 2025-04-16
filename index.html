@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px auto 0;
+            animation: fadeIn 2.5s ease-out;
+        }
+
+        .profile-photo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00adb5;
+            box-shadow: 0 0 15px #00adb5;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-photo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00adb5, 0 0 40px #00adb5;
+        }
+
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-left: 5px solid #00adb5;
+            padding-left: 15px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .socials a {
+            font-size: 1.8em;
+            color: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            color: #00adb5;
+            text-shadow: 0 0 5px #00adb5, 0 0 10px #00adb5, 0 0 20px #00adb5, 0 0 40px #00adb5;
+            transform: scale(1.2);
+        }
+
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hello, I'm Your AN Pavan Sai</h1>
+        <div class="profile-photo">
+            <img src="WhatsApp Image 2024-11-19 at 22.52.12.jpeg" alt="Your Name" />
+        </div>
+        <p>A passionate programmer and competitive coder with experience in Python, and web technologies. I love solving
+            challenging problems and building useful things.</p>
+    </header>
+
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I'm a software developer with a strong foundation in data structures and algorithms. I'm active on coding
+            platforms like Codeforces, CodeChef, and LeetCode, where I’ve solved many number of problems and
+            participated in many contests. I'm also experienced with web development using HTML, CSS, JavaScript, and
+            React.
+        </p>
+        <section id="education" class="fade-in">
+            <h2 class="section-title">Education</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 20px;">
+                    <strong>High School:</strong> Sri Krish International School, Chennai<br />
+                    <small>Graduated: 2024</small>
+                </li>
+                <li>
+                    <strong>Undergraduate:</strong> Newton School of technology, B.Tech in Computer Science(AI and
+                    ML)<br />
+                    <small>Expected Graduation: 2028</small>
+                </li>
+            </ul>
+        </section>
+
+    </section>
+
+    <section id="socials" class="fade-in">
+        <h2 class="section-title">Find Me Online</h2>
+        <div class="socials">
+            <a href="https://github.com/AN-Pavan-Sai" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/Pavan_2006_/" target="_blank" title="LeetCode"><i
+                    class="fas fa-code"></i></a>
+            <a href="https://codeforces.com/profile/AN_Pavan_Sai" target="_blank" title="Codeforces"><i
+                    class="fas fa-bolt"></i></a>
+            <a href="https://www.codechef.com/users/glow_sheep_98" target="_blank" title="CodeChef"><i
+                    class="fas fa-utensils"></i></a>
+            <a href="https://www.linkedin.com/in/an-pavan-sai-19b6b3339/" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        window.addEventListener('scroll', () => {
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
